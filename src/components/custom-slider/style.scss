@@ -1,0 +1,113 @@
+$color-gray: #8b8b8d;
+$color-white: white;
+$color-red: red;
+$color-black: black;
+
+$color-blue-dark: rgba(2, 0, 36, 1);
+$color-blue-medium: rgba(9, 9, 121, 1);
+$color-blue-light: rgba(0, 212, 255, 1);
+
+.slider-block {
+  width: 100%;
+
+  .slider-track {
+    width: 100%;
+    height: 4px;
+    background-color: $color-gray;
+    border-radius: 10px;
+    position: relative;
+  }
+
+  .slider-circle {
+    width: 12px;
+    min-width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: $color-white;
+    border: 2px solid $color-red;
+    display: block;
+    cursor: pointer;
+    position: relative;
+
+    &:hover .current-value {
+      opacity: 1;
+      visibility: visible;
+      bottom: 14px;
+    }
+
+    .current-value {
+      position: absolute;
+      bottom: 10px;
+      padding: 2px 4px;
+      border-radius: 2px;
+      background-color: $color-gray;
+      font-size: 10px;
+      transform: translateX(-50%);
+      left: 50%;
+      transition: 0.3s;
+      opacity: 0;
+      visibility: hidden;
+      color: $color-white;
+
+      &:before {
+        position: absolute;
+        width: 100%;
+        height: 5px;
+        top: 100%;
+        left: 0;
+        content: '';
+      }
+    }
+  }
+
+  .slider-thumb {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    z-index: 2;
+    background: linear-gradient(270deg, $color-blue-dark 0%, $color-blue-medium 12%, $color-blue-light 100%);;
+  }
+
+  .positions {
+    position: relative;
+    margin: 0 auto;
+    margin-right: 2px;
+
+
+    span {
+      position: absolute;
+      z-index: 1;
+      margin-top: 4px;
+      font-size: 8px;
+      display: block;
+      margin-right: 5px;
+      padding-top: 2px;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover{
+        color: $color-gray;
+      }
+
+      &:before{
+        position: absolute;
+        width: 1px;
+        height: 4px;
+        background-color: $color-gray;
+        content: '';
+        top: -2px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      &:last-child:before{
+        left: 0;
+        transform: translateX(0);
+      }
+    }
+  }
+}

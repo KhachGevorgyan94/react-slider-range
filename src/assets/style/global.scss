@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.slider-title {
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.slider-subtitle, .result {
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 12px;
+  margin-top: 20px;
+
+}
+
+.random-slider-container {
+  max-width: 400px;
+  margin: 20px auto 20px;
+}
